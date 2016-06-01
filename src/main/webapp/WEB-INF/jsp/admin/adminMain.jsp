@@ -25,7 +25,7 @@ $(document).ready(function() {
 		var companyNo = $("#selCompany option:selected").val();
 		
 		alert(emailAddress + "로 인증번호가 발송되었습니다. ");
-		$.post("http://<spring:message code="server.ip" />/ally/member/applyCertificationCode",
+		$.post("/ally/member/applyCertificationCode",
 				{
 					emailAddress : emailAddress,
 					ageGroup : ageGroup,
@@ -146,21 +146,6 @@ $(document).ready(function() {
 	});
 	
 });
-
-function admissionRegister(affiliateShopNo) {
-	$.post("/ally/shop/admissionRegister", 
-			{
-				affiliateShopNo : affiliateShopNo
-			},
-			function(json) {
-				if(json.isSuccess) {
-					alert("승인완료")
-					document.location.reload();
-				} else {
-					alert(json.resultMsg);
-				}
-			});
-}
 
 </script>
 <body class="non-responsive">
@@ -334,41 +319,6 @@ function admissionRegister(affiliateShopNo) {
             </table>
           </div>          
           
-          <div class="table-responsive">
-            <table class="table" style="text-align: center;">
-				<tbody>
-					<tr>
-						<th colspan="9" style="text-align:center;">제휴업체 정보</th>
-					</tr>
-					<tr>
-						<th style="text-align: center;">업체번호</th>
-						<th style="text-align: center;">업체이름</th>
-						<th style="text-align: center;">대표자</th>
-						<th style="text-align: center;">업체분류</th>
-						<th style="text-align: center;">전화번호</th>
-						<th style="text-align: center;">핸드폰번호</th>
-						<th style="text-align: center;">로그인ID</th>
-						<th style="text-align: center;">등록상품개수</th>
-						<th style="text-align: center;">상태</th>
-					</tr>
-					<c:forEach items="${shopList}" var="shop">
-						<c:if test="${shop.affiliateShopStatusCode != 'WAIT'}">
-						<tr>
-							<td>${shop.affiliateShopNo}</td>
-							<td>${shop.affiliateShopName}</td>
-							<td>${shop.representative}</td>
-							<td>${shop.shopCategoryCode}</td>
-							<td>${shop.telephoneNo}</td>
-							<td>${shop.cellphoneNo}</td>
-							<td>${shop.loginID}</td>
-							<td>${shop.productCount}</td>
-							<td>${shop.affiliateShopStatusCode}</td>
-						</tr>
-						</c:if>
-					</c:forEach>
-				</tbody>
-            </table>
-          </div>
         </div>
         <br>
         <br>
