@@ -2,5 +2,6 @@
 jdbc.driverClassName=cubrid.jdbc.driver.CUBRIDDriver
 jdbc.url=jdbc:cubrid:10.113.182.73:30000:ally:::?charset=UTF-8
 jdbc.username=dba
-jdbc.password=
+jdbc.password=/*\ube44\ubc00\ubc88\ud638\ub97c \uc785\ub825\ud574 \uc8fc\uc138\uc694*/
 jdbc.maxWait=6000
+
