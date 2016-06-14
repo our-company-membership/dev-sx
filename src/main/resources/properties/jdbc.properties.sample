@@ -1,7 +1,7 @@
 #help jdbc info
 jdbc.driverClassName=cubrid.jdbc.driver.CUBRIDDriver
-jdbc.url=jdbc:cubrid:10.113.182.73:30000:ally:::?charset=UTF-8
+jdbc.url=jdbc:cubrid:52.78.36.25:30000:dev_ally:::?charset=UTF-8
 jdbc.username=dba
-jdbc.password=/*\ube44\ubc00\ubc88\ud638\ub97c \uc785\ub825\ud574 \uc8fc\uc138\uc694*/
+jdbc.password=/*비밀번호를 입력해주세요*/
 jdbc.maxWait=6000
 
